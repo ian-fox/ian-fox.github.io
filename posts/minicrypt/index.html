@@ -1,0 +1,155 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Ian Fox</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Ian Fox" />
+  <meta name="generator" content="Hugo 0.40.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://ianfox.io/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="https://ianfox.io/css/custom.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://ianfox.io/">Ian Fox</a>
+            </h1>
+
+      <ul id="social-media">
+        
+    
+    <li>
+        <a class="" href="https://ianfox.io/">
+            <i class="fa-li fa  fa-lg"></i><span>Home</span>
+        </a>
+    </li>
+    
+    <li>
+        <a class="" href="https://ianfox.io/cv.pdf">
+            <i class="fa-li fa  fa-lg"></i><span>CV</span>
+        </a>
+    </li>
+    
+
+         
+        <li><a href="https://github.com/ian-fox"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+        
+        <li><a href="mailto:ian@ianfox.io"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>Software developer interested in security and automation</em></p>
+      
+    </header>
+
+    <main>
+
+
+
+
+<article>
+
+        <h2>A miniature cryptic crossword</h2>
+    
+        
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2019-06-08T00:16:58-04:00">Jun 8, 2019</time>
+        </li>
+        
+        
+        <li>
+            Categories: 
+            <em>
+                
+                    
+                    <a href="https://ianfox.io/categories/blog/">blog</a>
+                
+            </em>
+        </li>
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://ianfox.io/tags/minicrypt/">#minicrypt</a>
+                
+                    , 
+                    <a href="https://ianfox.io/tags/software/">#software</a>
+                
+            </em>
+        </li>
+        
+
+        <li>3 min read</li>
+    </ul>
+</aside>
+        
+    
+        
+
+<p>Recently I have been learning to do cryptic crosswords. If you aren&rsquo;t familiar with them, they&rsquo;re very similar to normal crosswords, except the clues are a little bit tricky. Most of them consist of two pieces: a definition and some wordplay. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Fear being late to catch end of dinner (5)</code></pre></div>
+<p>In this case, the answer is <code>DREAD</code>. &ldquo;Fear&rdquo; is the definition, and the wordplay consists of <code>DEAD</code> (being late) with <code>R</code> (the end of &ldquo;dinner&rdquo;) inserted. This is one form of wordplay (inserting a letter into a word), but there are others which make use of things like anagrams, words which make other words when reversed, palindromes, and more.</p>
+
+<h3 id="the-plan">The Plan</h3>
+
+<p>I decided that I&rsquo;d like to write a column about these puzzles for <em>Mathnews</em>, the student newspaper for the faculty of math at UWaterloo. My plan is that every edition I will introduce a new type of clue, explain how it works, and then provide a sample puzzle with clues drawn from all the clue types which I have introduced up to that point. For my own interest, and because I&rsquo;m lazy, I would also like to automate as much of this crossword generation as possible.</p>
+
+<p>In an attempt too make the automation easier, I&rsquo;m going to start with a simpler problem: rather than setting an entire crossword, I&rsquo;ll attempt to write a program that will set a miniature 5x5 crossword like <a href="https://www.nytimes.com/crosswords/game/mini">the ones in the New York Times</a>. Some of my ideas on how to generate some of the trickier types of cryptic clues are probably not going to have fantastic running times, so limiting it to clues for five letter words should help that a lot. It does also make things less interesting though, so I may have to scrap it eventually.</p>
+
+<h3 id="generating-puzzles">Generating Puzzles</h3>
+
+<p>The first step is to generate a 5 by 5 grid of letters such that each row and column is a valid word or phrase. The simplest way I could think of to do this was to take a wordlist of five letter words<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> and place them in a grid sequentially, doing a depth first search. Starting from the top row down the algorithm picks a random order to try the wordlist in, and it tries each word in turn in the first empty row of the grid and recurses.</p>
+
+<p>In order to make things a <em>little</em> more efficient, I also have it parse the wordlist into a prefix tree (or a <em>trie</em>). Then at each stage after a word is inserted, it looks at the partial words formed by the columns of the grid and checks to see if there are any possible words which could fit there. If there aren&rsquo;t, then the most recent word is removed and the algorithm continues. No point in searching for a word to put after <code>ZONES</code> and <code>ZEROS</code> if there are no words that start with <code>ZZ</code>. It could be made even more efficient by doing things like filling in a column if there&rsquo;s only one possible word left, but it seems to work fast enough for now without that.</p>
+
+<p>So I now have a program which will generate a filled in crossword puzzle for me. You can see it <a href="https://github.com/ian-fox/minicrypt">on my GitHub</a>. Next step: clue suggestions!</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Finding a wordlist itself turned out to be an interesting problem, as it turns out crossword setters are fairly secretive about their wordlists. For testing, I ended up picking one from the <a href="https://www-cs-faculty.stanford.edu/~knuth/sgb.html">Stanford Graphbase</a> and <a href="https://github.com/first20hours/google-10000-english">Google&rsquo;s trillion word corpus</a>, but I&rsquo;ll be sure to keep my eye out for other interesting ones.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+    
+    </article>
+    
+
+<section class="post-nav">
+    <ul>
+        
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2019 - Ian Fox | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://ianfox.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://ianfox.io/js/scripts.js"></script>
+</body>
+
+</html>

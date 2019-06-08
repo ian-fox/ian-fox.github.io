@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Ian Fox</title>
+    <link>https://ianfox.io/tags/</link>
+    <description>Recent content in Tags on Ian Fox</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ian@ianfox.io (Ian Fox)</managingEditor>
+    <webMaster>ian@ianfox.io (Ian Fox)</webMaster>
+    <copyright>Copyright &amp;copy; 2019 - Ian Fox</copyright>
+    <lastBuildDate>Sat, 08 Jun 2019 00:16:58 -0400</lastBuildDate>
+    
+	<atom:link href="https://ianfox.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Minicrypt</title>
+      <link>https://ianfox.io/tags/minicrypt/</link>
+      <pubDate>Sat, 08 Jun 2019 00:16:58 -0400</pubDate>
+      <author>ian@ianfox.io (Ian Fox)</author>
+      <guid>https://ianfox.io/tags/minicrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>https://ianfox.io/tags/software/</link>
+      <pubDate>Sat, 08 Jun 2019 00:16:58 -0400</pubDate>
+      <author>ian@ianfox.io (Ian Fox)</author>
+      <guid>https://ianfox.io/tags/software/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

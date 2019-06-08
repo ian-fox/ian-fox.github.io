@@ -1,0 +1,14 @@
+#container main article p code {
+  padding: 0.2em;
+  background-color: #ffffcc;
+  font-size: 0.9em;
+}
+
+#container main p a, #container main .footnotes a {
+  color: #0033ff;
+  text-decoration: none;
+}
+
+#container header {
+  margin-bottom: 0;
+}
