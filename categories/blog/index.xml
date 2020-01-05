@@ -8,18 +8,19 @@
     <managingEditor>ian@ianfox.io (Ian Fox)</managingEditor>
     <webMaster>ian@ianfox.io (Ian Fox)</webMaster>
     <copyright>Copyright &amp;copy; 2019 - Ian Fox</copyright>
-    <lastBuildDate>Sat, 08 Jun 2019 00:16:58 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2020 14:39:45 -0500</lastBuildDate>
     
 	<atom:link href="https://ianfox.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A miniature cryptic crossword</title>
-      <link>https://ianfox.io/posts/minicrypt/</link>
-      <pubDate>Sat, 08 Jun 2019 00:16:58 -0400</pubDate>
+      <title>A satisfying proof</title>
+      <link>https://ianfox.io/posts/favourite-proof/</link>
+      <pubDate>Sun, 05 Jan 2020 14:39:45 -0500</pubDate>
       <author>ian@ianfox.io (Ian Fox)</author>
-      <guid>https://ianfox.io/posts/minicrypt/</guid>
-      <description>Recently I have been learning to do cryptic crosswords. If you aren&amp;rsquo;t familiar with them, they&amp;rsquo;re very similar to normal crosswords, except the clues are a little bit tricky. Most of them consist of two pieces: a definition and some wordplay.</description>
+      <guid>https://ianfox.io/posts/favourite-proof/</guid>
+      <description>In 1777, Georges-Louis Leclerc, Comte de Buffon posed the following question:
+Suppose we have a floor made of parallel wooden boards, each the same width, and we drop a needle onto the floor.</description>
     </item>
     
   </channel>

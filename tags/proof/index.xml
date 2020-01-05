@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Ian Fox</title>
-    <link>https://ianfox.io/posts/</link>
-    <description>Recent content in Posts on Ian Fox</description>
+    <title>Proof on Ian Fox</title>
+    <link>https://ianfox.io/tags/proof/</link>
+    <description>Recent content in Proof on Ian Fox</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>ian@ianfox.io (Ian Fox)</managingEditor>
     <webMaster>ian@ianfox.io (Ian Fox)</webMaster>
     <copyright>Copyright &amp;copy; 2019 - Ian Fox</copyright>
     <lastBuildDate>Sun, 05 Jan 2020 14:39:45 -0500</lastBuildDate>
     
-	<atom:link href="https://ianfox.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ianfox.io/tags/proof/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

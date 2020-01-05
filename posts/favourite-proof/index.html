@@ -1,0 +1,216 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+
+  <title>Ian Fox</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Ian Fox" />
+  <meta name="generator" content="Hugo 0.40.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://ianfox.io/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="https://ianfox.io/css/custom.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://ianfox.io/">Ian Fox</a>
+            </h1>
+
+      <ul id="social-media">
+        
+    
+    <li>
+        <a class="" href="https://ianfox.io/">
+            <i class="fa-li fa  fa-lg"></i><span>Home</span>
+        </a>
+    </li>
+    
+    <li>
+        <a class="" href="https://ianfox.io/cv.pdf">
+            <i class="fa-li fa  fa-lg"></i><span>CV</span>
+        </a>
+    </li>
+    
+
+         
+        <li><a href="https://github.com/ian-fox"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+        
+        <li><a href="mailto:ian@ianfox.io"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+        
+      </ul>
+      
+      <p><em>Software developer interested in security and automation</em></p>
+      
+    </header>
+
+    <main>
+
+
+
+
+<article>
+
+        <h2>A satisfying proof</h2>
+    
+        
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2020-01-05T14:39:45-05:00">Jan 5, 2020</time>
+        </li>
+        
+        
+        <li>
+            Categories: 
+            <em>
+                
+                    
+                    <a href="https://ianfox.io/categories/blog/">blog</a>
+                
+            </em>
+        </li>
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://ianfox.io/tags/math/">#math</a>
+                
+                    , 
+                    <a href="https://ianfox.io/tags/proof/">#proof</a>
+                
+            </em>
+        </li>
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+        
+    
+        <p>In 1777, Georges-Louis Leclerc, Comte de Buffon posed the following question:</p>
+
+<p>Suppose we have a floor made of parallel wooden boards, each the same width, and we drop a needle onto the floor. What is the probability that the needle will lie across a line between two boards?</p>
+
+<p>He solved it with some fancy calculus, which is a fine way of doing it, but not particularly satisfying to me. However in 1860 a man named Joseph-Émile Barbier came up with this super slick proof, which is without a doubt the coolest proof I've ever seen.</p>
+
+<p>The trick is that rather than trying to calculate the probability directly, Barbier examined it through the lens of the expected number of lines the needle would cross.</p>
+
+<p>Suppose we define our boards to be 1 unit of distance wide, and we find that dropping a needle of length 1 unit has a probability <span  class="math">\(p\)</span> of crossing one of the lines. We will ignore the possibility of the needle being exactly along a line, or having one end each on precisely two lines, since the probability of those is 0.</p>
+
+<p>If we drop one needle <span  class="math">\(n_1\)</span>, our expected number of crossings is simply <span  class="math">\(p\)</span>, the probability that the needle crosses a line.</p>
+
+<p>If we drop a second needle <span  class="math">\(n_2\)</span>, then by linearity of expectation we find that our expected total number of crossings is</p>
+
+<p><span  class="math">\[E(n_1+n_2)=E(n_1)+E(n_2)=2p\]</span></p>
+
+<p>In general, the expected number of crossings when you drop <span  class="math">\(m\)</span> needles is <span  class="math">\(mp\)</span>.</p>
+
+
+<figure>
+    
+        <img src="two-needles.png" alt="Two needles" />
+    
+    
+    <figcaption>
+        <p>
+        Two needles on the floor
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>Similarly, if we drop a needle <span  class="math">\(n\)</span> and break it into <span  class="math">\(m\)</span> identical pieces <span  class="math">\(n_1 \ldots n_m\)</span> we find that each piece must be responsible for the same expected number of crossings:</p>
+
+<p><span  class="math">\[E(n) = \sum_{i=0}^{m}E(n_i) \implies E(n_i)=\frac{1}{p}\]</span></p>
+
+<p>In short, we can drop a needle of any length <span  class="math">\(\ell\)</span> we want and the expected number of crossings will be <span  class="math">\(\ell p\)</span>. This holds even if we drop some really bizarre needles:</p>
+
+
+<figure>
+    
+        <img src="strange-needles.png" alt="Strangely shaped needles" />
+    
+    
+    <figcaption>
+        <p>
+        Some strangely shaped needles
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>Now suppose we take a needle and bend it into a circle of diameter 1. We know that the expected number of crossings must be <span  class="math">\(\pi p\)</span> from before. But consider the ways the needle could fall on the floor:</p>
+
+
+<figure>
+    
+        <img src="circle-needles.png" alt="Some needles bent into circles" />
+    
+    
+    <figcaption>
+        <p>
+        Three needles, bent into circles
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>It always crosses in exactly two places! So <span  class="math">\(\pi p=2\)</span> and we find that <span  class="math">\(p=\frac{2}{\pi}\)</span>. Any straight needle we drop on the floor will have probability <span  class="math">\(\frac{2\ell}{\pi}\)</span> of crossing a line. And we didn't do a single bit of calculus!</p>
+
+    
+    </article>
+    
+
+<section class="post-nav">
+    <ul>
+        
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2019 - Ian Fox | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://ianfox.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://ianfox.io/js/scripts.js"></script>
+</body>
+
+</html>
