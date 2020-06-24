@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -10,43 +10,36 @@
   <url>
     <loc>https://ianfox.io/categories/blog/</loc>
     <lastmod>2020-01-05T14:39:45-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ianfox.io/categories/</loc>
     <lastmod>2020-01-05T14:39:45-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ianfox.io/</loc>
     <lastmod>2020-01-05T14:39:45-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ianfox.io/tags/math/</loc>
     <lastmod>2020-01-05T14:39:45-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ianfox.io/posts/</loc>
     <lastmod>2020-01-05T14:39:45-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ianfox.io/tags/proof/</loc>
     <lastmod>2020-01-05T14:39:45-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ianfox.io/tags/</loc>
     <lastmod>2020-01-05T14:39:45-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
